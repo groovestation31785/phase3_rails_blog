@@ -1,0 +1,16 @@
+<h2>GroovyRailsBlog</h2>
+
+  <p><%= link_to 'New Post', new_post_path %></p>
+  <% @posts.each do |post| %>
+  <div style="border:solid 2px black; width: 50%">
+    <ul style="list-style:none">
+      <li><h4><%= post.title %></h4></li>
+      <li><%= post.body %></li>
+    </ul>
+    <ul style="list-style:none">
+      <li><%= link_to 'View Post', post %></li>
+      <li><%= link_to 'Edit Post', edit_post_path(post) %></li>
+      <li><%= link_to 'Delete Post', post, method: :delete %></li>
+    </ul>
+  </div>
+  <% end %>
